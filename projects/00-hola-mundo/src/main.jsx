@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-const createButton = (
+const createButton = ({text}) =>{
   <button>
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -21,7 +21,7 @@ const createButton = (
     </svg>
     {text}
   </button>
-);
+};
 
 root.render(
   <React.Fragment>
