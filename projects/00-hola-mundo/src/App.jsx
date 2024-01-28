@@ -1,10 +1,26 @@
-export function App (){
-    return(
-<article>
-<div>
-            <h1>Tiwitter Card</h1>
-        </div>
-</article>
-    )
-}
+import React from "react";
+import "./App.css";
+import { TwitterFollowCard } from "./TwitterFollowCard";
 
+export function App() {
+  const formatUserName = (userName) => `@${userName}`;
+
+  return (
+    <div>
+      <TwitterFollowCard
+        initialIsFollowing={true}
+        formatUserName={formatUserName}
+        userName="midudev"
+      >
+        <h1>Miguel</h1>
+      </TwitterFollowCard>
+      <TwitterFollowCard
+        initialIsFollowing={false}
+        formatUserName={formatUserName}
+        userName="laumr_"
+      >
+        <h1>Laura</h1>
+      </TwitterFollowCard>
+    </div>
+  );
+}
