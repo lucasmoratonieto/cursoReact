@@ -12,3 +12,11 @@ body {
   border: 1px solid red;
   background: red;
 }
+
+.tw-followCard-Following:hover {
+  display: none;
+}
+
+.tw-followCard-Following:hover .tw-followCard-stopFollow {
+  display: block;
+}
