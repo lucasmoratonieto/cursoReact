@@ -1,9 +1,13 @@
 import './App.css'
+import { Movies } from "./components/Movies.jsx"
+import {useMovies} from "./hooks/useMovies.js"
 
 function App() {
 
-    const webApi = ''
-    const apiKey = '5cabb81c'
+    // const webApi = ''
+    // const apiKey = '5cabb81c'
+  const { movies:mappedMovies } = useMovies()
+    
 
   return (
     <div className='page'>
@@ -12,12 +16,23 @@ function App() {
         <h1>Aquí irán las películas</h1>
         <form className='form' >
           <input placeholder='Advenger, start wars...' />
-          <button>Buscar</button>
+          <button onClick={()=>{
+            console.log('I am a button')
+          }}>
+            Buscar
+          </button>
         </form>
       </header>
 
       <main>
-        Aquí irán los resultados
+        {
+            <ul>
+              {
+                <Movies movies={mappedMovies}/>
+              }
+            </ul>
+        
+        }
       </main>
     </div>
   )
